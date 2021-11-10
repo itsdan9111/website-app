@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import NavBar from './components/NavBar';
+import MovieContent from './components/MovieContent/MovieContent';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 
 function App() {
+  const [page, setPage] = useState('home');
+
+  const handlePage = (pagetype) => {
+    setPage(pagetype);
+  }
+
+  if (page === 'home') {
+    return (
+      <div>
+        <MovieContent pageContent='home'/>
+        <NavBar onPage={handlePage} />
+      </div>
+    );
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <MovieContent/>
+      <NavBar onPage={handlePage} />
     </div>
   );
 }
