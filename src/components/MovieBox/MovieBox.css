@@ -154,3 +154,20 @@
   background-color: #8e2929;
   box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
+
+.genreContainer {
+  display: flex;
+  text-align: center;
+}
+
+.genreContainer > div {
+  padding: 2px;
+  font-size: small;
+  text-align: center;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}

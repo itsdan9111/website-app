@@ -60,20 +60,34 @@ const MovieBox = (props) => {
             <ul>
                 {Movies.map((anime) => {
                     return (
-                        <li key={anime.id} name={anime.name}>
+                        <li key={anime["mal_id"]} name={anime["title"]}>
                             <Modal 
                                 styles="animeimg"
                                 imgwidth="248px"
                                 imgheight="350px" 
-                                image={anime.img}
-                                title={anime.name} 
-                                wishvalue={anime.name} 
-                                synopsis={anime.desc}
-                                rating={anime.rate} 
+                                image={anime["image_url"]}
+                                title={anime["title"]}
+                                jpTitle={anime["title_japanese"]}
+                                aniType={anime["type"]}
+                                source={anime["source"]}
+                                episodes={anime["episodes"]}
+                                status={anime["status"]}
+                                aired={anime["aired"]["string"]}
+                                year={anime["aired"]["prop"]["from"]["year"]}
+                                duration={anime["duration"]}
+                                rate={anime["rating"]}
+                                url={anime["url"]}
+                                genre={anime["genres"]}
+                                studio={anime["studios"][0]["name"]} 
+                                opening={anime["opening_themes"]}
+                                ending={anime["ending_themes"]}
+                                wishvalue={anime["title"]} 
+                                synopsis={anime["synopsis"]}
+                                rating={anime["score"]} 
                             />
-                            <h4>{anime.name}</h4>
-                            <p style={{fontSize: 'small'}}>{anime.genre}</p>
-                                <button className="button-34" role="button" value={anime.name} key={anime.id} onClick={toggleWishlist}>{wishlist.includes(anime.name) ? "Remove from Wishlist" : "Add to Wishlist"}</button>
+                            <h4>{anime["title"]}</h4>
+                            <p>{anime["aired"]["prop"]["from"]["year"]}</p>
+                                <button className="button-34" role="button" value={anime["title"]} key={anime["mal_id"]} onClick={toggleWishlist}>{wishlist.includes(anime["title"]) ? "Remove from Wishlist" : "Add to Wishlist"}</button>
                         </li>
                     )
                 })}
@@ -89,20 +103,34 @@ const MovieBox = (props) => {
             <ul>
                 {wishlist.map((wish) => {
                     for (let i = 0; i < Movies.length; i++) {
-                        if (wish === Movies[i].name) {
+                        if (wish === Movies[i]["title"]) {
                             return (
-                                <li key={Movies[i].id} name={Movies[i].name}>
+                                <li key={Movies[i]["mal_id"]} name={Movies[i]["title"]}>
                                     <button className="button-3 button-vertical-center" role="button" value={wish} onClick={removeWishlist}>Remove</button>
-                                    <h4 className='text-center'>{Movies[i].name}</h4>  
+                                    <h4 className='text-center'>{Movies[i]["title"]}</h4>  
                                     <div className='vertical-center'>
                                     <Modal 
                                         styles="wishimg"
                                         imgwidth="85px"
                                         imgheight="120px" 
-                                        image={Movies[i].img}
-                                        title={Movies[i].name} 
-                                        synopsis={Movies[i].desc}
-                                        rating={Movies[i].rate} 
+                                        image={Movies[i]["image_url"]}
+                                        title={Movies[i]["title"]}
+                                        jpTitle={Movies[i]["title_japanese"]}
+                                        aniType={Movies[i]["type"]}
+                                        source={Movies[i]["source"]}
+                                        episodes={Movies[i]["episodes"]}
+                                        status={Movies[i]["status"]}
+                                        aired={Movies[i]["aired"]["string"]}
+                                        year={Movies[i]["aired"]["prop"]["from"]["year"]}
+                                        duration={Movies[i]["duration"]}
+                                        url={Movies[i]["url"]}
+                                        studio={Movies[i]["studios"][0]["name"]}
+                                        genre={Movies[i]["genres"]}
+                                        rate={Movies[i]["rating"]}   
+                                        opening={Movies[i]["opening_themes"]}
+                                        ending={Movies[i]["ending_themes"]}
+                                        synopsis={Movies[i]["synopsis"]}
+                                        rating={Movies[i]["score"]} 
                                     /></div>
                                     
                                 </li>

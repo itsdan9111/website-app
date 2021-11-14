@@ -1,57 +1,54 @@
-.draw-border {
-    box-shadow: inset 0 0 0 4px #58afd1;
-    color: #58afd1;
-    transition: color 0.25s 0.0833333333s;
-    position: relative;
-  }
-  .draw-border::before, .draw-border::after {
-    border: 0 solid transparent;
-    box-sizing: border-box;
-    content: "";
-    pointer-events: none;
-    position: absolute;
-    width: 0;
-    height: 0;
-    bottom: 0;
-    right: 0;
-  }
-  .draw-border::before {
-    border-bottom-width: 4px;
-    border-left-width: 4px;
-  }
-  .draw-border::after {
-    border-top-width: 4px;
-    border-right-width: 4px;
-  }
-  .draw-border:hover {
-    color: #ffe593;
-  }
-  .draw-border:hover::before, .draw-border:hover::after {
-    border-color: #ffe593;
-    transition: border-color 0s, width 0.25s, height 0.25s;
-    width: 100%;
-    height: 100%;
-  }
-  .draw-border:hover::before {
-    transition-delay: 0s, 0s, 0.25s;
-  }
-  .draw-border:hover::after {
-    transition-delay: 0s, 0.25s, 0s;
-  }
-  
-  .btn {
-    background: #2e2835;
-    border: none;
-    cursor: pointer;
-    line-height: 1.5;
-    font: 700 1.2rem "Roboto Slab", sans-serif;
-    float: right;
-    padding: 10px 20px;
-    letter-spacing: 0.05rem;
-  }
-  .btn:focus {
-    outline: 2px dotted #55d7dc;
-  }
+.button-3 {
+  appearance: none;
+  background-color: #ff3e3e;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 3px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.button-3:hover {
+  background-color: #ff1818;
+}
+
+.button-3:focus {
+  box-shadow: rgba(168, 0, 0, 0.4) 0 0 0 3px;
+  outline: none;
+}
+
+.button-3:disabled {
+  background-color: #d39494;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.button-3:active {
+  background-color: #8e2929;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
 
   .paragraph {
       display: inline;
@@ -60,4 +57,55 @@
   .rating-box {
     background-color: gold;
     border-radius: 10px;
+    text-align: center;
+    font-size: xx-large;
+    padding: 5px;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .jptitle {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: 0px;
+    text-align: center;
+    background-color: rgb(35, 39, 43);
+    color: white;
+    border-radius: 5px;
+  }
+
+  .contentbox {
+    border: black;
+    border-width: 1px;
+    display: flex;
+  }
+
+  .flexContainer {
+    display: flex;
+    font-size: 14px;
+  }
+
+  .flexContainer > div {
+    margin: 10px;
+    padding: 20px;
+  }
+
+  .genreContainer {
+    display: flex;
+    text-align: center;
+  }
+  
+  .genreContainer > div {
+    padding: 2px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .scrollbox {
+    overflow: scroll;
+    height: 250px;
+    font-size: small;
   }
